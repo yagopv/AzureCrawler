@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "AzureCrawler", "AzureCrawler\AzureCrawler.ccproj", "{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureCrawlerRole", "AzureCrawlerRole\AzureCrawlerRole.csproj", "{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B8EBB1FF-6F9A-4697-BDE3-1E8010BF3D1B}"
+	ProjectSection(SolutionItems) = preProject
+		license.txt = license.txt
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
