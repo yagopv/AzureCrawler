@@ -136,7 +136,7 @@ namespace AzureCrawlerRole
         /// <returns>bool</returns>
         private bool ValidateCredentials(string apiKey, string application)
         {
-            if (apiKey == "23aba36c-731f-4279-8114-4c761e25dbbb" && application == "durandalauth")
+            if (apiKey == "MyApiKey" && application == "MyApplicationName")      
             {
                 return true;
             }
