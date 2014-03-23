@@ -3,7 +3,7 @@
   <Role name="AzureCrawlerRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=azurecrawler;AccountKey=dhEifgYm7sxPMOBXR0lFjttnVWLRr0PZV0FyZIp0DuI6McyUCdOgU/uHKIHG2hGYUcVLQrhtDelxPujXG5qdRA==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
