@@ -1,0 +1,75 @@
+﻿<h2>What´s this?</h2>
+
+<p>If you are developing applications using new modern JavaScript frameworks like <em>Angular, Ember, Durandal</em>  ... etc. you probably already know that this type of applications are not crawlable by search engine robots without a couple of extra steps.</p>
+
+<h2>SEO according to Google</h2>
+
+<p>If you want your JavaScript application to be crawlable, you need to implement some steps on your own. You can find information about the process on <a href="https://developers.google.com/webmasters/ajax-crawling/docs/getting-started?hl=iw">this Google document</a>. Take a look to it in order to understand better what is required  both client and server side.</p>
+
+<h2>What is AzureCrawler about?</h2>
+
+<p>AzureCrawler helps with taking <em>HTML Snapshots</em> of your dynamically generated content.</p>
+
+<p>This project is specific to Azure and is ready to be deployed as a Cloud Service.  <em>AzureCrawler is a Worker Role that uses OWIN to  Self-Host a  Web API</em>.  </p>
+
+<p>Said that, it´s easy to bring the code to your own solution if you don´t want to use it as a separate  Cloud Service.  As well, if you are not using .NET and Azure it´s not complicated to port it to another platform like Amazon Web Services.</p>
+
+<h2>How AzureCrawler works?</h2>
+
+<p>The self-hosted Web API contained in AzureCrawler exposes a resource with an endpoint in:</p>
+
+<p>```<br/>
+POST api/snapshot</p>
+
+<p>```</p>
+
+<p>If you make a api call there, a <em>PhantomJS</em> process will run and take care of  the <em>HTML Snapshot</em> against the provided url.</p>
+
+<p>You can pass some parameters in the body of the POST call</p>
+
+<p>```<br/>
+string ApiId (required). The application identification<br/>
+string Application (required). The application name<br/>
+string Url (required). The url to crawl<br/>
+bool Store (optional). If you want to store the snapshot for future calls<br/>
+DateTime ExpirationDate (optional). The expiration of  the stored snapshot<br/>
+string UserAgent (optional). The user agent of the bot crawling your application</p>
+
+<p>```</p>
+
+<p><em>ApiId</em> and <em>Application</em> fields are required and will be validated together. </p>
+
+<p>There isn´t any special mechanism for doing this validation more than the following private method:</p>
+
+<p><code><br/>
+/// &lt;summary&gt;<br/>
+/// Validate ApiKey. In the real world you should this against a custom store<br/>
+/// &lt;/summary&gt;<br/>
+/// &lt;param name="apiKey"&gt;The api key&lt;/param&gt;<br/>
+/// &lt;param name="apiKey"&gt;The application&lt;/param&gt;<br/>
+/// &lt;returns&gt;bool&lt;/returns&gt;<br/>
+private bool ValidateCredentials(string apiKey, string application)<br/>
+{<br/>
+    if (apiKey == "Any ApiId" &amp;&amp; application == "Any Application name")<br/>
+    {<br/>
+        return true;<br/>
+    }<br/>
+    return false;<br/>
+}<br/>
+</code></p>
+
+<p>So you can supply a new mechanism, use your own keys or use a database to store application credentials.</p>
+
+<p>The <em>Url</em> is the resource you want to crawl. The PhantomJS process will take care of  the snapshot  and will wait until all the dynamically generated content will be loaded.</p>
+
+<p>The latest fields are about providing information for storing the HTML  Snapshot in the store you prefer to.  </p>
+
+<p>By default, AzureCrawler will store the snapshots in Azure Storage within a blob container with the name of the <em>Application</em> field. </p>
+
+<p>If you do this, next time a bot requests the same <em>Url</em>,  the snapshot will be provided from the storage.  </p>
+
+<p>When the snapshot stored expires, a new crawl will be done and a new snapshot will be stored.</p>
+
+<h2>Know issues</h2>
+
+<p>There is a <a href="http://stackoverflow.com/questions/20258352/net-azure-sdk-blob-request-returns-400-badrequest">incompatibility</a> between the Azure Compute Emulator included in the SDK 2.2. and the latest 3.x Storage assemblies so you should test with live containers until next Azure toolkit will be released.</p>

@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "AzureCrawler", "AzureCrawler\AzureCrawler.ccproj", "{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureCrawlerRole", "AzureCrawlerRole\AzureCrawlerRole.csproj", "{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B8EBB1FF-6F9A-4697-BDE3-1E8010BF3D1B}"
 	ProjectSection(SolutionItems) = preProject
 		license.txt = license.txt
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "AzureCrawler", "AzureCrawler\AzureCrawler.ccproj", "{C38CEEEB-05FB-42DF-9AA0-CBA449CDE99E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureCrawlerRole", "AzureCrawlerRole\AzureCrawlerRole.csproj", "{71FEC5FE-D5BD-4FA9-9D24-8315C128FE95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

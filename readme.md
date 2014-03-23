@@ -69,3 +69,7 @@ By default, AzureCrawler will store the snapshots in Azure Storage within a blob
 If you do this, next time a bot requests the same *Url*,  the snapshot will be provided from the storage.  
 
 When the snapshot stored expires, a new crawl will be done and a new snapshot will be stored.
+
+## Know issues
+
+There is a [incompatibility](http://stackoverflow.com/questions/20258352/net-azure-sdk-blob-request-returns-400-badrequest) between the Azure Compute Emulator included in the SDK 2.2. and the latest 3.x Storage assemblies so you should test with live containers until next Azure toolkit will be released.
